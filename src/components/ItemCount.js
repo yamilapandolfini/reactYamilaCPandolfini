@@ -1,45 +1,30 @@
 import React, {useState} from 'react';
 
 
-const ItemCount = () => {
+const ItemCount = ({onAdd,stock,initial}) => {
 
-    const [count, setCount] = useState(1);
-    const [stock,setStock]= useState(5);
+    const [count, setCount] = useState(parseInt(initial));
 
     const handleIncrementar = () =>{
+        if(count <= stock-1)
         setCount(count + 1);
     }
 
     const handleDecrementar = () =>{
+        if (count>1)
         setCount(count - 1);
     }
 
-    if(count ===1){
-        return (
-            <div className = "itemCount">
-                <button onClick={handleDecrementar}disabled>-</button>
-                <span>{count}</span>
-                <button onClick={handleIncrementar}>+</button>
-            </div>
-        )
-    } else if (count <stock){
-        return(
-            <div className = "itemCount">
-                <button onClick={handleDecrementar}>-</button>
-                <span>{count}</span>
-                <button onClick={handleIncrementar}>+</button>
-             
-            </div>
-        )
-    } else if (count>=stock){
-        return(
-            <div className = "itemCount">
-                <button onClick={handleDecrementar}>-</button>
-                <span>{count}</span>
-                <button onClick={handleIncrementar}disabled>+</button>
-            </div>
-        )
-    }
+    return(
+         <div className = "itemCount">
+             <button onClick={handleDecrementar}>-</button>
+             <span>{count}</span>
+             <button onClick={handleIncrementar}>+</button>
+             <div>
+                 <button onClick={onAdd}>Agregar al carrito</button>
+             </div>
+         </div>
+     )
 }
 
 export default ItemCount

@@ -6,11 +6,8 @@ function ItemListContainer() {
  
   return (
     <div className="ItemListContainer">
-      
       <a ClassName="logo" href="#home"><img src="favicon.ico" alt="logo"/></a>
-      <ItemCount />
-      <button>Agregar al carrito</button>
-
+      <ItemCount stock="5" initial="1"/>
     </div>
     
     
