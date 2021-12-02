@@ -1,0 +1,22 @@
+.item-card {
+    display: inline-flex;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    width: 300px;
+    background-color: rgb(72, 87, 129);
+    color:white;
+    align-content: center;
+    justify-content: center;
+}
+
+.item-card.card {
+    height: 450px;
+    max-width: 300px;
+    width: 300px;
+    
+}
+
+.card-img-top{
+    width: 150px;
+}

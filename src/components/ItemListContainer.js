@@ -1,17 +1,32 @@
-import Button from '@restart/ui/esm/Button';
 import React from 'react';
-import ItemCount from '../components/ItemCount';
+import { useState, useEffect } from 'react';
+import ItemList from '../components/ItemList';
+import { getProducts } from '../components/products';
 
-function ItemListContainer() {
+
+
+const ItemListContainer = () => {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+      const list = getProducts()
+      list.then(list =>{
+          setProducts(list)
+      })
+      return (() => {
+          setProducts([])
+      })
+  }, [])
  
   return (
-    <div className="ItemListContainer">
-      <a ClassName="logo" href="#home"><img src="favicon.ico" alt="logo"/></a>
-      <ItemCount stock="5" initial="1"/>
-    </div>
+      <div className="ItemListContainer">
+        <ItemList products={products}/>
+
+      </div>
     
     
-  );
+  )
 }
 
 export default ItemListContainer;
