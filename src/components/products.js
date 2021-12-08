@@ -3,7 +3,7 @@ const products = [
       id:'1',
       name:'Camisa Celeste',
       price:'$1200',
-      description:'Camisa Celeste',
+      description:'Esta camisa sirve para cualquier ocasion, sumale un pantalon naranja y sos un fuego',
       priceUrl:'https://i.pinimg.com/236x/3c/33/5f/3c335f71a43e51493e1b293d20d86763--amp-other-stories-minimalist-style.jpg'
     },
     {

@@ -3,7 +3,7 @@ import Item from '../components/item';
 const ItemDetail = ({products = []})=>{
     return(
         <ul className="ItemGroup">
-            {products.map(product => <Item key={product.id} product={product}/>)}
+            {products.map(product => <Item key={product.id} item={product}/>)}
         </ul>     
     )
 }

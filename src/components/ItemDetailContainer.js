@@ -19,11 +19,9 @@ const ItemDetailContainer = () => {
     })
 }, [])
 
-console.log(products);
-
   return (
       <div className="ItemDetailContainer">
-        <ItemDetail products={products}/>
+        <ItemDetail item={products}/>
 
       </div>
     
