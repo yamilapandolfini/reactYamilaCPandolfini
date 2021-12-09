@@ -7,21 +7,24 @@ import { getItem } from '../components/products';
 
 const ItemDetailContainer = () => {
 
-  const [products, setProducts] = useState([])
+  const [itemprod, setItemprod] = useState([])
 
   useEffect(() => {
     const item = getItem()
+    console.log("item")
+    console.log(itemprod)
     item.then(list =>{
-        setProducts(list)
+        setItemprod(list)
+        console.log(itemprod)
     })
     return (() => {
-        setProducts([])
+        setItemprod([])
     })
 }, [])
 
   return (
       <div className="ItemDetailContainer">
-        <ItemDetail item={products}/>
+        <ItemDetail itemprod={itemprod}/>
 
       </div>
     
