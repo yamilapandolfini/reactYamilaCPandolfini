@@ -1,18 +1,35 @@
-import './itemcustom.css'
+import ItemCount from './ItemCount';
+import './ItemDetail.css'
 
-const ItemDetail = ({itemprod})=>{
+const ItemDetail = ({ product })=>{
     return(
-        <div className="item-card-1">
-        <div className="item-card-1 card">
-            <div className="card-body">
-                <h4 className="card-title">{itemprod.name}</h4>
-                <img className="card-img-top-1" src={itemprod.priceUrl} alt={itemprod.name} />
-                <h2 className="card-subtitle mb-2 text-muted">{itemprod.description}</h2>
-                <p className="text-justify" style={{fontSize: '14px'}}>Precio:{itemprod.price}</p>
-                <button>Agregar al carrito</button>
-            </div>
-        </div>
-        </div>
+        <article className="CardItem">
+            <header className="Header">
+                <h2 className="ItemHeader">
+                    {product?.name}
+                </h2>
+            </header>
+            <picture>
+                <img src={product?.priceUrl} alt={product?.name} className="ItemImg"/>
+            </picture>
+            <section>
+                <p className="Info">
+                    Categoria: {product?.category}
+                </p>
+                <p className="Info">
+                    Descripción: {product?.description}
+                </p>
+                <p className="Info">
+                    Precio: {product?.price}
+                </p>
+            </section>  
+            <ItemCount />         
+            <footer className='ItemFooter'>
+                <p>Agregar al carrito</p>
+            </footer>
+           
+        </article>
+        
     );
 }
 
