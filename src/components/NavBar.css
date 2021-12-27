@@ -1,16 +1,19 @@
 .NavBar {
+  display: flex;
   background-color: #333;
   overflow: hidden;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
 }
 
-.h4{
+.title h4{
   float: left;
-  background-color: rgb(72, 87, 129);;
   color: white;
 }
 .Categories {
-  float: left;
-  background-color: rgb(72, 87, 129);;
+  display: flex;
+  align-items: center;
   color: white;
 }
 

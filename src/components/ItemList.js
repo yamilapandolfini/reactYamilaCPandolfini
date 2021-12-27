@@ -1,5 +1,6 @@
 import Item from '../components/item';
 
+
 const ItemList = ({ products = [] })=>{
     console.log("esto es un map")
     console.log(products)
