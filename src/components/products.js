@@ -51,7 +51,7 @@ const products = [
       id:'7',
       name:'Remera Batic',
       category:'remera',
-      price:'800',
+      price:'$800',
       description:'Esta camisa sirve para cualquier ocasion, sumale un pantalon naranja y sos un fuego',
       priceUrl:'https://www.distritomoda.com.ar/sites/default/files/styles/producto_interior/public/imagenes/img_4888_1566218211.jpg?itok=IGW6dtVi'
     },
@@ -98,11 +98,17 @@ const products = [
 
   ]
 
+const categories = [
+  {id:'vestido', description:'vestido'},
+  {id:'blusa', description:'blusa'},
+  {id:'camisa', description:'camisa'},
+  {id:'remera', description:'remera'},
+]
 
-export const getProducts = () => {
+export const getProducts = (category) => {
     return new Promise((resolve, reject) =>{
         setTimeout(() => {
-            resolve(products)
+            category ? resolve(products.filter(product=> product.category === category)) : resolve(products)
         },1000 )
   
     })
@@ -124,11 +130,8 @@ export const getProductById = (id) => {
   })
 }
 
-export const getCategories = (category) => {
-  
+export const getCategories = () => {
   return new Promise ((resolve, reject) => {
-
-      const product = products.find(prod => prod.category=== category)
-      setTimeout(() => resolve(product), 2000)
+      setTimeout(() => resolve(categories), 2000)
   })
 }
