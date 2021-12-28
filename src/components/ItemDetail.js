@@ -42,7 +42,7 @@ const ItemDetail = ({ product })=>{
                 {!compra ?
                     <ItemCount stock = {10} onAdd = {(qty) => handleCompra (qty)} />
                     :
-                    <Link to= "/cart"><button className='ItemFooter' onClick = {handleComprando}>Agregar</button></Link>
+                    <Link to= "/cart"><button className='ItemFooter' onClick = {handleComprando}>Comprar</button></Link>
                 }
             </div>
             
