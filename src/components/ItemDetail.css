@@ -47,12 +47,14 @@
     transition: ease background-color 250ms;
     font-size: 16px;
 }
+
+
   
-.ItemFooter:hover {
+/* .ItemFooter:hover {
     background-color: rgb(86, 100, 138);
 }
 
 .ItemFooter:disabled {
     cursor: default;
     opacity: 0.7;
-}
+} */

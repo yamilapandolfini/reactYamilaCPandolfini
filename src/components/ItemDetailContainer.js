@@ -12,6 +12,7 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState()
   const { paramId } = useParams()
   console.log(paramId)
+
   useEffect(() => {
       getProductById(paramId).then(item => {
           setProduct(item)
@@ -28,6 +29,7 @@ const ItemDetailContainer = () => {
 
   return (
       <div className="ItemDetailContainer">
+ 
         <ItemDetail product={product}/>
 
       </div>
