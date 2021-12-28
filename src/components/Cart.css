@@ -1,0 +1,16 @@
+.detalle {
+    width: 900px;
+    padding: 30px;
+    margin: 30px;
+    font-size: 15px;
+    background-color: rgb(72, 87, 129);
+    color: white;
+    border-radius: 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+.detalle img {
+    width: 150px;
+    object-position: center;
+}

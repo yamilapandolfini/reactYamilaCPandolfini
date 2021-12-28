@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react';
+import { CartContext } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 import './ItemDetail.css'
 
 const ItemDetail = ({ product })=>{
+
+    const {addItem} = useContext(CartContext)
 
     const [compra, setCompra] = useState(false);
     const [qty, setQty] = useState(0);
@@ -14,7 +17,7 @@ const ItemDetail = ({ product })=>{
     }
 
     const handleComprando = () =>{
-        console.log("agregar");
+        addItem(product, qty);
     }
 
     return(
