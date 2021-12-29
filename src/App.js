@@ -17,11 +17,12 @@ const App =() => {
         <BrowserRouter>
           <NavBar/>
             <Routes>
-              <Route exact path='/' element={<ItemListContainer/>}/>
-              <Route exact path='/category/:categoryId' element={<ItemListContainer/>} />
+              <Route path='/' element={<ItemListContainer/>}/>
+              <Route path='/category/:categoryId' element={<ItemListContainer/>} />
               <Route path='/detail/:paramId' element={<ItemDetailContainer />} />
               <Route path='count' element={<ItemCount/>} />
               <Route path='/cart' element={<Cart/>} />
+              <Route path = "*" element={<h2>Not found</h2>}/>
             </Routes>
         </BrowserRouter>
       </CartContextProvider>
