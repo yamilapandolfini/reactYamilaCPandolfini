@@ -1,0 +1,12 @@
+.itemCountContainer button {
+    background-color: rgb(72, 87, 129);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px lightgray;
+    transition: ease background-color 250ms;
+    font-size: 16px;
+}
+
