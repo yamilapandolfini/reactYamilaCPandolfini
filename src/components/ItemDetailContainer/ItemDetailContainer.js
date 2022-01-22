@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import ItemDetail from '../components/ItemDetail';
-import { getProductById } from '../components/products';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { getProductById } from '../../products';
 import { useParams } from 'react-router-dom'
 import './ItemDetailContainer.css';
 

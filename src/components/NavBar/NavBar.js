@@ -1,9 +1,9 @@
 import './NavBar.css';
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
-import { getCategories } from '../components/products';
+import { getCategories } from '../../products';
 import { useState, useEffect, useContext } from 'react';
-import { CartContext } from '../components/CartContext';
+import { CartContext } from '../../context/CartContext';
 
 const NavBar = () =>{
 

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { CartContext } from '../components/CartContext';
+import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
 const ItemDetail = ({ product })=>{
