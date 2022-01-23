@@ -2,8 +2,6 @@ import Item from '../Item/Item';
 
 
 const ItemList = ({ products = [] })=>{
-    console.log("esto es un map")
-    console.log(products)
 
     return(
         

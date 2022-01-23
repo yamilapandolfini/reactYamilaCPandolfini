@@ -1,17 +1,18 @@
-import React from 'react';
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Badge from "@material-ui/core/Badge";
 
-const CartWidget = () =>{
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import './CartWidget.css';
 
-    return(
-        <div>
-            <Badge color="secondary" badgeContent={0}>
-            <ShoppingCartIcon />{" "}
-            </Badge>
-        </div>
-  );
+const CartWidget = () => {
+    const { getQuantity } = useContext(CartContext)
     
+    return(
+        <Link to='/cart' className="CartWidget">
+            <img src="cart.svg" alt='cart' className='CartImg'/>
+            {getQuantity()}
+        </Link> 
+    )
 }
 
-export default CartWidget;
+export default CartWidget

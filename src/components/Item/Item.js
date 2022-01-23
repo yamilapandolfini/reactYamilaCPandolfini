@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Item = ({ product }) =>{
 
+
     return(
         <div className="item-card">
         <div className="item-card card">

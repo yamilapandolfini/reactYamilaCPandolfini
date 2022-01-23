@@ -7,14 +7,21 @@
   color: white;
 }
 
-.title h4{
+.title h3{
   float: left;
   color: white;
 }
 .Categories {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
+}
+
+.cart {
+  display: flex;
+  float: right;
+
 }
 
 .Option {
@@ -25,6 +32,8 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  justify-content: center;
+  align-items: center;
 }
 
 .Option:hover {
