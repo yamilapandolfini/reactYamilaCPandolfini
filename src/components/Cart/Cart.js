@@ -90,12 +90,6 @@ const Cart = () => {
                 <Link to='/' className='Optioncard'>seguir comprando</Link>
             </div>
         )
-    } else{
-        <div>
-                <h1>Carrito vacio
-                </h1>
-                <Link to='/' className='Optioncard'>seguir comprando</Link>
-            </div>
     }
 
     return ( 

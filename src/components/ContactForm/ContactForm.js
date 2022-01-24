@@ -33,7 +33,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 onChange={({ target }) => setPhone(target.value)}
               />
             </label>
-            <label className='LabelContact'>Direccion:
+            <label className='LabelContact'>Dirección:
               <input
                 className='InputContact'
                 type='text'

@@ -2,7 +2,6 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-//import CartContext from '../../context/CartContext';
 import { db } from '../../services/firebase/firebase'
 import { getDocs, collection } from 'firebase/firestore'
 
@@ -17,7 +16,6 @@ const NavBar = () =>{
               const categories = querySnapshot.docs.map(doc => {
                   return { id: doc.id, ...doc.data() }
               })
-              console.log(categories)
               setCategories(categories)
             } catch (error) {
               console.log('Error searching categories:', error)
@@ -28,7 +26,7 @@ const NavBar = () =>{
     return(
         <nav className="navBar">
             <div className="title">
-                <Link to={'/'}><h3>SomosAire</h3></Link>
+                <Link to={'/'} href=""><h3>SomosAire</h3></Link>
             </div>
             
             <div className="Categories">
