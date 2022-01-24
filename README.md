@@ -16,7 +16,7 @@ Este es un proyecto de e-commerce de una tienda online de indumentaria femenina 
 #### Indicaciones:
 
 * Una vez copiado el repositorio, por favor correr localmente el siguiente comando:
-    npm install
+    ## npm install . 
   De este modo se te descargara la carpeta node_modules necesaria para el correcto funcionamiento y visualizacion de este proyecto.
 
 * Configuración de .env
