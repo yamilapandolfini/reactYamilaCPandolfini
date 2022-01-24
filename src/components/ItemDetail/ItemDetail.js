@@ -1,27 +1,22 @@
 import React, { useContext, useState } from 'react';
-import { CartContext } from '../../context/CartContext';
+import CartContext from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
 const ItemDetail = ({ product })=>{
 
-    const {addItem} = useContext(CartContext)
+    const [quantity, setQuantity] = useState(0)
+    const { addItem } = useContext(CartContext)
 
-    const [compra, setCompra] = useState(false);
-    const [qty, setQty] = useState(0);
-    
-    const handleCompra = (qty) =>{
-        setCompra(true);
-        setQty(qty);
+    const addToCart = (quantity) => {
+        setQuantity(quantity)
+        addItem(product, quantity)
     }
 
-    const handleComprando = () =>{
-        addItem(product, qty);
-    }
 
-    return(
-        <article className="CardItem">
+    return (
+        <article className='CardItem'>
             <header className="Header">
                 <h2 className="ItemHeader">
                     {product?.name}
@@ -38,21 +33,17 @@ const ItemDetail = ({ product })=>{
                     Descripción: {product?.description}
                 </p>
                 <p className="Info">
-                    Precio: {product?.price}
+                    Precio: ${product?.price}
                 </p>
-            </section>
-            <div>
-                {!compra ?
-                    <ItemCount stock = {10} onAdd = {(qty) => handleCompra (qty)} />
-                    :
-                    <Link to= "/cart"><button className='ItemFooter' onClick = {handleComprando}>Comprar</button></Link>
+            </section>           
+            <footer className='ItemFooter'>
+                {
+                    quantity === 0 
+                    ?   <ItemCount product={product} onAdd={addToCart} />
+                    :   <Link to='/cart' className='Option'>Ir al carrito</Link>
                 }
-            </div>
-            
-            <Link className='ButtonDetail' to={'/'}>Ver todos los productos</Link>
-        
+            </footer>
         </article>
-        
     );
 }
 

@@ -1,42 +1,40 @@
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
-import { getCategories } from '../../products';
-import { useState, useEffect, useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { useState, useEffect } from 'react';
+import { db } from '../../services/firebase/firebase'
+import { getDocs, collection } from 'firebase/firestore'
 
 const NavBar = () =>{
 
-    const {getCantidad} = useContext(CartContext);
-    
     const [categories, setCategories] = useState([])
 
     useEffect(()=>{
-        getCategories().then(categories => {
-            setCategories(categories)
-        })
+        (async () => {
+            try {
+              const querySnapshot = await getDocs(collection(db, 'categories'))
+              const categories = querySnapshot.docs.map(doc => {
+                  return { id: doc.id, ...doc.data() }
+              })
+              setCategories(categories)
+            } catch (error) {
+              console.log('Error searching categories:', error)
+            }     
+          })()
     },[])
 
     return(
         <nav className="navBar">
             <div className="title">
-                <Link to={'/'}><h4>SomosAire</h4></Link>
+                <Link to={'/'} href=""><h3>SomosAire</h3></Link>
             </div>
             
             <div className="Categories">
                 {categories.map(cat => <Link key={cat.id} className='Option' to={`/category/${cat.id}`}>{cat.description}</Link>)}
             </div>
-            <div style ={{position: "absolute", right: "20px"}}> 
+            <div className="cart"> 
                 <Link to = "/cart"><CartWidget/></Link>
-                <div 
-                style={{
-                    height: '22px', width: '22px', borderRadius: "10px", backgroundColor: "red",
-                    position: "absolute", top: "-8px", right: "-10px", textAlign: "center", alignItems: "center"
-                }}>
-                <span style={{
-                    color: 'white',
-                }}>{getCantidad()}</span>
-                </div>
+                
             </div>
         </nav>
         
