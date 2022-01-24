@@ -26,7 +26,7 @@ const NavBar = () =>{
     return(
         <nav className="navBar">
             <div className="title">
-                <Link to={'/'} href=""><h3>SomosAire</h3></Link>
+                <Link to={'/'}><h3>SomosAire</h3></Link>
             </div>
             
             <div className="Categories">
